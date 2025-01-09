@@ -5,7 +5,6 @@
 }
 .container{
   height: 20vh;
-  align-content: space-between;
   justify-content:space-between;
   display: grid;
   grid-template-columns:8% 8% 8% 8% 8% 8% 8% 8% 8% 8% ;

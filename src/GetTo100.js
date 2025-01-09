@@ -89,7 +89,7 @@ const newGame=()=>{
 <button onClick={newGame} disabled={statuse!=2}>new game</button>
 </div>
 <div style={{display:'flex'}}>
-<div style={{width: '15vw',borderRight: "solid 1px black "}}>
+<div style={{width: '15vw',borderRight: "solid 1px black ",height:"85vh"}}>
     <h1>useres:</h1>
 {users.map((user)=>{
     return <div style={{display:"flex",marginTop:"2rem"}}><h1>{user.name}</h1><span style={{borderRadius: "50%",border: "solid 1px black" ,marginLeft:"2rem",background:"gray"}}>{user.num}</span></div>

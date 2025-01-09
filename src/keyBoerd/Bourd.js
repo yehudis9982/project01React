@@ -32,7 +32,7 @@ const Bourd=({settextDecoration,setColor, setBackround ,setFont ,setFontSize, ad
         })
         setLeters(newLeters)
     }
-return<div id='contanerBourd'style={{height: '35vh',width:' 95vw', display: 'grid',gridTemplateColumns:'8% 8% 8% 8% 8% 8% 8% 8%',gridTemplateRows:'6vh 6vh 6vh 6vh 6vh',justifyContent:' space-between',backgroundColor: 'gray',   alignContent: "space-between"}}>
+return<div id='contanerBourd'style={{height: '30vh',width:' 100vw', display: 'grid',gridTemplateColumns:'8% 8% 8% 8% 8% 8% 8% 8%',gridTemplateRows:'6vh 6vh 6vh 6vh 6vh',justifyContent:' space-between',backgroundColor: 'gray',   alignContent: "space-between"}}>
 <button onClick={uperCase} style={{gridArea:'1/3/2/4'}}> A+</button>
 <button onClick={lowerCase} style={{gridArea:'1/4/2/5'}}> A-</button>
 <button onClick={()=>{settextDecoration("underline")}} style={{gridArea:'1/2/2/3'}}> U</button>
@@ -65,14 +65,13 @@ return<div id='contanerBourd'style={{height: '35vh',width:' 95vw', display: 'gri
 
 <button onClick={changeKeyHe} style={{gridArea:'5/2/6/3'}}>{changeKeyB!=1?'עברית':"English"}</button>
 
-<div style={{gridArea:'2/1/5/8'}} >
+<div style={{gridArea:'2/1/5/8',marginTop:"2vh"}} >
 {changeKeyB===3&&<Simbles addLetter={addLetter}/>}
 {changeKeyB===4&&<UperCase addLetter={addLetter}/>}
 {changeKeyB===1&&<HibruwBoerd addLetter={addLetter}/>}
 {changeKeyB===2&&<EnglishBoured addLetter={addLetter}/>}
 {changeKeyB===5&&<Numbers addLetter={addLetter}/>}
 {changeKeyB===6&&<Chars addLetter={addLetter}/>}</div>
-<button onClick={changeKey}style={{gridArea:'4/1/5/2'}}> shift</button>
 </div>
 }
 export default Bourd
