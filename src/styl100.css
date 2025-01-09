@@ -1,0 +1,17 @@
+h2{
+    background:blue;
+    color:white;
+   
+    font-size: 3rem;
+   height: 12vh;
+   margin: 2vh;
+   
+}
+button{
+    border-radius: 10%;
+    background:blue;
+    color:white;
+    width: 5vw;
+    height: 3vh;
+   
+}

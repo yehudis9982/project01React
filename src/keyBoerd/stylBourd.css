@@ -1,0 +1,14 @@
+#contanerBourd button{
+ border-radius: 10%;
+ color: black;
+ background-color:white;
+}
+.container{
+  height: 20vh;
+  align-content: space-between;
+  justify-content:space-between;
+  display: grid;
+  grid-template-columns:8% 8% 8% 8% 8% 8% 8% 8% 8% 8% ;
+  grid-template-rows:5vh 5vh 5vh;
+
+}
