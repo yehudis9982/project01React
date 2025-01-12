@@ -59,7 +59,7 @@ const update=(user)=>{
     })
    
     setUsers(newArr)
-    const newU=users.filter((user)=>{
+    const newU=newArr.filter((user)=>{
             return user.win
         })
      setWinners(newU)     
@@ -79,10 +79,8 @@ const newGame=()=>{
     setUsers([])
 }
 
-    return <div>
-  
-    
-    <div style={{ background:'blue',color:'white',display:'flex',  width:'100vw', alignItems: "center", justifyContent: "center"}}>
+    return <div>   
+<div style={{ background:'blue',color:'white',display:'flex',  width:'100vw', alignItems: "center", justifyContent: "center"}}>
 <div style={{fontSize:'4rem',marginRight:"2rem" }}>get100</div>
 <button onClick={()=>{setStatuse(1)}}>add users</button>
 <button onClick={clickStart} disabled={users.length<2}>start game</button>
@@ -92,11 +90,11 @@ const newGame=()=>{
 <div style={{width: '15vw',borderRight: "solid 1px black ",height:"85vh"}}>
     <h1>useres:</h1>
 {users.map((user)=>{
-    return <div style={{display:"flex",marginTop:"2rem"}}><h1>{user.name}</h1><span style={{borderRadius: "50%",border: "solid 1px black" ,marginLeft:"2rem",background:"gray"}}>{user.num}</span></div>
+    return <div style={{display:"flex",marginTop:"2rem"}}><h1>{user.name}</h1><h1 style={{borderRadius: "50%",border: "solid 1px black" ,marginLeft:"2rem",background:"gray"}}>{user.num}</h1></div>
 })}
 <h1>wineres:</h1>
 {winners.map((user)=>{
-    return <div><h1>{user.name}</h1><h4>{user.steps}</h4></div>
+    return <div style={{marginTop:"2rem"}}><h1>{user.name}</h1><h4>steps:{user.steps}</h4></div>
 })}
 </div>
 <br/>

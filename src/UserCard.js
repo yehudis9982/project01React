@@ -21,7 +21,7 @@ const UserCard=({user,update,deleteUser})=>{
     <h1>{user.name}</h1>
     <h2 >{user.num}</h2>
     
-    {user.win?<div style={{fontSize: '3rem'}}>👍</div>:<div style={{display:user.disabled?'none':'flex',marginLeft: '10%' }}>
+    {user.win?<div style={{fontSize: '3rem'}}>👍</div>:<div style={{display:user.disabled?'none':'flex'}}>
     <button  onClick={plas1}  >+1</button>
     <button onClick={minus1}  >-1</button>
     <button onClick={caful}  >*2</button>

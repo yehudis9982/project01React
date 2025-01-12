@@ -38,12 +38,10 @@ return<div id='contanerBourd'style={{height: '30vh',width:' 100vw', display: 'gr
 <button onClick={()=>{settextDecoration("underline")}} style={{gridArea:'1/2/2/3'}}> U</button>
 <button onClick={()=>{setfontWeight("bolder")}} style={{gridArea:'1/1/2/2'}}> B</button>
 <button onClick={changeKey}style={{gridArea:'4/8/5/9'}}> shift</button>
-<button onClick={()=>{addLetter(" ")}} style={{gridArea:'5/3/6/7',width:'40vw'}}> spaseBar</button>
-<button onClick={()=>{setLeters(letters.slice(0,letters.length-1))}}style={{gridArea:'2/8/3/9'}} >delete</button>
 <button onClick={()=>{setLeters([])}} style={{gridArea:'5/8/6/9'}}>clear</button>
 <button onClick={()=>{addLetter("\n")}} style={{gridArea:'3/8/4/9'}}>enter</button>
-<button onClick={()=>{setChangeKeyB(3)}} style={{gridArea:'5/7/6/8'}}>Simbles</button>
-<button onClick={()=>{setChangeKeyB(4)}} style={{gridArea:'5/1/6/'}}>Cap</button>
+<button onClick={()=>{setLeters(letters.slice(0,letters.length-1))}}style={{gridArea:'2/8/3/9'}} >delete</button>
+
 <div style={{gridArea:'1/8/2/9'}}><lable for="back">back</lable>
 <input id="back" type="color" onChange={(e)=>setBackround(e.target.value)} /></div>
 <div style={{gridArea:'1/7/2/8'}}><lable for="color">color</lable>
@@ -62,9 +60,6 @@ return<div id='contanerBourd'style={{height: '30vh',width:' 100vw', display: 'gr
     <option value='Impact'>Impact </option>
     <option value='Cochin'> Cochin</option>  
 </select>
-
-<button onClick={changeKeyHe} style={{gridArea:'5/2/6/3'}}>{changeKeyB!=1?'עברית':"English"}</button>
-
 <div style={{gridArea:'2/1/5/8',marginTop:"2vh"}} >
 {changeKeyB===3&&<Simbles addLetter={addLetter}/>}
 {changeKeyB===4&&<UperCase addLetter={addLetter}/>}
@@ -72,6 +67,10 @@ return<div id='contanerBourd'style={{height: '30vh',width:' 100vw', display: 'gr
 {changeKeyB===2&&<EnglishBoured addLetter={addLetter}/>}
 {changeKeyB===5&&<Numbers addLetter={addLetter}/>}
 {changeKeyB===6&&<Chars addLetter={addLetter}/>}</div>
+<button onClick={changeKeyHe} style={{gridArea:'5/2/6/3'}}>{changeKeyB!=1?'עברית':"English"}</button>
+<button onClick={()=>{addLetter(" ")}} style={{gridArea:'5/3/6/7',width:"100%"}}> spaseBar</button>
+<button onClick={()=>{setChangeKeyB(4)}} style={{gridArea:'5/1/6/2'}}>Cap</button>
+<button onClick={()=>{setChangeKeyB(3)}} style={{gridArea:'5/7/6/8'}}>Simbles</button>
 </div>
 }
 export default Bourd
