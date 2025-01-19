@@ -16,11 +16,7 @@ disabled:true
 }
 setUsers([...users,user])  
 }
-const deleteUser=(user)=>{
-    const filteredArr=users.filter(element=>{return element.id!=user.id})
-    const fixedId=filteredArr.map((element,i)=>{return {...element,id:i}})
-    setUsers(fixedId)
-}
+
 const update=(user)=>{
     let findUser
     if(user.id===users.length-1)
@@ -78,6 +74,33 @@ const newGame=()=>{
     setStatuse(1)
     setUsers([])
 }
+const deleteUser = (user) => {
+    // סינון המשתמש שנמחק
+    const filteredUsers = users.filter((u) => u.id !== user.id)
+
+    // עדכון מזהים למשתמשים הנותרים
+    const updatedUsers = filteredUsers.map((u) => ({...u,id: u.id + 1,}))
+    // עדכון ה-state
+    setUsers(updatedUsers)
+      // מציאת המשתמש הבא (אם יש)
+let nextUser = updatedUsers.find((u) => u.id > user.id && !u.win)
+
+// אם אין משתמש אחרי, מצא את הראשון שעדיין לא ניצח
+if (!nextUser) {
+nextUser = updatedUsers.find((u) => !u.win)
+}
+
+// עדכון מצב disable
+const finalUsers = updatedUsers.map((u) => ({
+...u,
+disabled: nextUser && u.id === nextUser.id ? false : true,
+}))
+
+// עדכון ה-state
+setUsers(finalUsers)
+
+}
+
 
     return <div>   
 <div style={{ background:'blue',color:'white',display:'flex',  width:'100vw', alignItems: "center", justifyContent: "center"}}>
